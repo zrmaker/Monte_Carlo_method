@@ -29,11 +29,13 @@ class deck_parser:
         '9' : 9, '8' : 8, '7' : 7, '6' : 6, '5' : 5,
         '4' : 4, '3' : 3, '2' : 2
         }
-    def rank_parser(self,card,game):
-        if game == 'blackjack' or game == 'spanish21':
-            tmp = self.dict[card[0]]
-            if tmp > 10: tmp = 10
-            return tmp
+        
+    def blackjack_rank_parser(self,card):
+        tmp = self.dict[card[0]]
+        if tmp > 10: tmp = 10
+        flag = 0
+        if tmp == 1: flag = 1
+        return tmp, flag
 
         
 if __name__ == '__main__':
