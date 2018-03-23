@@ -3,7 +3,8 @@
 |   1    | Hit           |
 |   2    | Stand         |
 |   3    | Double        |
-|   4    | Split         |
+|   4    | Surrender     |
+|   5    | Split         |
 
 | Column Number | Dealer's Faceup Card|
 |:-------------:|:-------------------:|
