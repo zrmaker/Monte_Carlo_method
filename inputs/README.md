@@ -1,8 +1,24 @@
 | Number | Correspondence|
 |:------:|:-------------:|
 |   1    | Hit           |
-|   2    | centered      |
-|   3    | are neat      |
+|   2    | Stand         |
+|   3    | Double        |
+|   4    | Split         |
+
+| Column Number | Dealer's Faceup Card|
+|:-------------:|:-------------------:|
+|   A           | 2                   |
+|   B           | 3                   |
+|   C           | 4                   |
+|   D           | 5                   |
+|   E           | 6                   |
+|   F           | 7                   |
+|   G           | 8                   |
+|   H           | 9                   |
+|   I           | J                   |
+|   J           | Q                   |
+|   K           | K                   |
+|   L           | A                   |
 
 | Row Number | Player's Sum|
 |:----------:|:-----------:|

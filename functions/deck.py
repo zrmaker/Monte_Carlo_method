@@ -37,7 +37,18 @@ class deck_parser:
         if tmp == 1: flag = 1
         return tmp, flag
 
-        
+    def general_rank_parser(self,card):
+        return self.dict[card[0]]
+
+    def sum(self, cards):
+        tmp = 0
+        flag = 0
+        for i in range(len(cards)):
+            tmp2,tmp3 = deck_parser().blackjack_rank_parser(cards[i])
+            tmp += tmp2
+            if tmp3 == 1: flag = 1
+        return tmp,flag
+
 if __name__ == '__main__':
     tmp = pro_deck().blackjack(6)[0]
     print(tmp, deck_parser().rank_parser(tmp,'spanish21'))
