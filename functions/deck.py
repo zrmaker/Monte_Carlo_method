@@ -57,7 +57,7 @@ class deck_parser:
         else: return 0
 
     def hit21(self, cards):
-        if self.sum(cards)[0] == 21: return 1
+        if self.sum(cards) == (21,0) or self.sum(cards) == (11,1): return 1
         else: return 0
 
 if __name__ == '__main__':
