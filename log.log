@@ -6,3 +6,7 @@ Soft way is not present.
 Fixed soft way.
 Added surrender and fixed some bugs.
 Test debug finished first stage.
+
+18/3/24:
+Added Monte Carlo method.
+Run ok.

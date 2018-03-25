@@ -4,13 +4,13 @@ import os
 from deck import *
 
 class spanish21:
-    def __init__(self, n_p = 1):
+    def __init__(self, num_playing_pots = 1):
         self.dealer_hit_soft_17 = 1
         self.min_bet = 10.
         self.dir_path = os.path.dirname(os.path.realpath(__file__))
         self.hard = np.genfromtxt((os.path.dirname(self.dir_path)+'/inputs/spanish21_hard.csv'), delimiter=',')
         self.soft = np.genfromtxt((os.path.dirname(self.dir_path)+'/inputs/spanish21_soft.csv'), delimiter=',')
-        self.num_pots = n_p
+        self.num_pots = num_playing_pots
         self.hit_dict = {
             1.0 : 'hit', 2.0 : 'stand', 3.0 : 'double', 4.0 : 'surrender', 5.0 : 'split'
         }
@@ -24,7 +24,6 @@ class spanish21:
         self.back = 0
         self.deck = pro_deck().spanish21(6)
         self.cut =np.random.randint(30,high=50)
-        self.one_deck_flow()
 
     def draw(self):
         tmp = self.deck[0]
@@ -173,10 +172,10 @@ class spanish21:
             if not over_flag:
                 self.who_win()
             self.stack += self.back
-            print(self.stack,self.back)
+            print('stack change return:',self.stack,self.stack-prev_stack,self.back)
             print('---')
-
-        # print(len(self.deck),self.cut)
+        print(len(self.deck),self.cut)
+        return self.stack
 
 if __name__ == '__main__':
-    spanish21(1)
+    spanish21(1).one_deck_flow()
