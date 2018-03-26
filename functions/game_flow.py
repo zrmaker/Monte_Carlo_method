@@ -21,7 +21,9 @@ class spanish21:
         self.pot_flag = dict.fromkeys(np.arange(self.num_pots))
         self.bet = dict.fromkeys(np.arange(self.num_pots), self.min_bet)
         self.stack = 1000.
-        self.back = 0
+        self.back = 0.
+        self.bet_accum = 0.
+        self.back_accum = 0.
         self.deck = pro_deck().spanish21(6)
         self.cut =np.random.randint(30,high=50)
 
@@ -161,7 +163,7 @@ class spanish21:
                         print('pot '+str(i)+' lost')
 
     def one_deck_flow(self):
-        print(self.deck)
+        # print(self.deck)
         while len(self.deck) > self.cut:
             self.back = 0
             prev_stack = self.stack
@@ -172,10 +174,12 @@ class spanish21:
             if not over_flag:
                 self.who_win()
             self.stack += self.back
+            self.bet_accum = self.bet_accum + self.back - self.stack + prev_stack
+            self.back_accum += self.back
             print('stack change return:',self.stack,self.stack-prev_stack,self.back)
             print('---')
         print(len(self.deck),self.cut)
-        return self.stack
+        return self.stack,self.bet_accum,self.back_accum
 
 if __name__ == '__main__':
     spanish21(1).one_deck_flow()
